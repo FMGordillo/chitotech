@@ -7,6 +7,6 @@
 <style>
   :global(body) {
     color: theme('colors.gray.50');
-    background: theme('colors.blue.950');
+    background: theme('colors.stone.950');
   }
 </style>
