@@ -4,7 +4,7 @@
     <p>No dejamos <strong>a nadie atrás</strong></p>
   </section>
 
-  <section class="flex justify-center -mb-5 pb-8">
+  <section class="flex justify-center -mt-4 pb-8">
     <a href="https://calendly.com/lpc-squad-temporal/30min" target="_blank"
       rel="noreferrer noopener" class="border-2 border-gray-300
       rounded-md px-4 py-2 bg-gray-700 hover:bg-cyan-800">Charlemos</a>
