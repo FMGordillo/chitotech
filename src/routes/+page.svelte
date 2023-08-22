@@ -1,13 +1,15 @@
 <main class="">
-  <section class="relative pl-8 pt-12 pb-14 bg-slate-900">
-    <video class="absolute object-cover" autoplay muted loop>
-      <source src="/static/background.mp4" />
+  <section class="relative pb-14 bg-slate-900 h-96">
+    <video class="absolute object-cover w-full h-full z-0" autoplay muted loop>
+      <source src="/background.mp4" />
     </video>
-    <h1 class="font-extrabold text-5xl">Chiro Tech</h1>
-    <p class="text-xl">No dejamos <strong>a nadie atrás</strong></p>
+    <div class="flex flex-col h-full justify-center items-center relative z-10">
+      <h1 class="font-extrabold text-5xl">Chiro Tech</h1>
+      <p class="text-xl">No dejamos <strong>a nadie atrás</strong></p>
+    </div>
   </section>
 
-  <section class="flex justify-center -mt-4 pb-32">
+  <section class="flex justify-center pt-8 pb-12">
     <a href="https://calendly.com/lpc-squad-temporal/30min" target="_blank"
       rel="noreferrer noopener" class="text-xl border-2 border-gray-300
       rounded-md px-8 py-4 bg-gray-700 hover:bg-cyan-800">Charlemos</a>
