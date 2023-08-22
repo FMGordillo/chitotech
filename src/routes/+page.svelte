@@ -5,7 +5,8 @@
     </video>
     <div class="flex flex-col h-full justify-center items-center relative z-10">
       <h1 class="font-extrabold text-5xl">Chiro Tech</h1>
-      <p class="text-xl">No dejamos <strong>a nadie atrás</strong></p>
+      <p class="text-xl">Construyendo el futuro juntos: <strong>Un bloque a la
+        vez</strong></p>
     </div>
   </section>
 
