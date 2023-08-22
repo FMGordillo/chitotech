@@ -1,3 +1,6 @@
+<head>
+  <title>Chiro.tech</title>
+</head>
 <main class="">
   <section class="relative pb-14 bg-slate-900 h-96">
     <video class="absolute object-cover w-full h-full z-0" autoplay muted loop>
@@ -12,8 +15,7 @@
 
   <section class="flex justify-center pt-8 pb-12">
     <a href="https://calendly.com/lpc-squad-temporal/30min" target="_blank"
-      rel="noreferrer noopener" class="text-xl border-2 border-gray-300
-      rounded-md px-8 py-4 bg-gray-700 hover:bg-cyan-800">Charlemos</a>
+      rel="noreferrer noopener" class="text-xl border-2 border-gray-300 rounded-md px-8 py-4 bg-gray-700 hover:bg-cyan-800">Charlemos</a>
   </section>
 
   <section class="flex flex-col gap-8">
