@@ -1,7 +1,8 @@
 {
-	"name": "favforme-v2",
-	"version": "0.0.1",
+	"name": "chirotech",
+	"version": "1.0.0",
 	"private": true,
+  "author": "Facundo Martin Gordillo<me@facundogordillo.com>",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
