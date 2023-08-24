@@ -2,11 +2,12 @@
   <title>Chiro.tech</title>
 </head>
 <main class="">
-  <section class="relative pb-14 bg-slate-900 h-96">
+  <section class="relative pb-14 bg-slate-900 h-[32rem] md:h-[34rem]">
     <video class="absolute object-cover w-full h-full z-0" autoplay muted loop>
       <source src="/background.mp4" />
     </video>
-    <div class="flex flex-col h-full justify-center items-center relative z-10">
+    <div class="flex flex-col h-full justify-center items-center relative px-10 z-10">
+      <img class="w-20" src="/logo.svg" />
       <h1 class="font-extrabold text-5xl">Chiro Tech</h1>
       <p class="text-xl">Construyendo el futuro juntos: <strong>Un bloque a la
         vez</strong></p>
