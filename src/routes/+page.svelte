@@ -1,18 +1,47 @@
 <head>
-  <title>Chiro.tech</title>
+  <title>Chiro Tech - Software Consultancy</title>
 </head>
+
 <main class="">
-  <section class="relative pb-14 bg-slate-900 h-[32rem] md:h-[34rem]">
+  <header class="fixed top-0 inset-x-0 z-10 bg-zinc-950 flex mx-auto p-4">
+    <div class="flex gap-2 items-center">
+      <img class="w-10" src="/logo.png" />
+      <span class="font-bold">Chiro Tech</span>
+    </div>
+  </header>
+
+  <section class="relative isolate pb-14 bg-slate-900 h-[36rem] md:h-[34rem]">
     <video class="absolute object-cover w-full h-full z-0" autoplay muted loop>
       <source src="/background.mp4" />
     </video>
-    <div class="flex flex-col h-full justify-center items-center relative px-10 z-10">
-      <img class="w-20" src="/logo.png" />
+    <div class="absolute mix-blend-multiply inset-0 bg-zinc-600" />
+    <div class="flex flex-col gap-2 h-full justify-center items-center relative px-10 z-10">
+      <img class="w-24" src="/logo.png" />
       <h1 class="font-extrabold text-5xl">Chiro Tech</h1>
       <p class="text-xl">Construyendo el futuro juntos: <strong>Un bloque a la
         vez</strong></p>
     </div>
   </section>
+
+  <!-- <section class="flex justify-center basis-14 gap-8"> -->
+  <!--   <div class="grid grid-cols-[24px_auto] gap-x-8 grid-rows-[auto_auto]"> -->
+  <!--     <div class="flex rounded justify-center items-center w-12 h-12 bg-zinc-200 row-span-2"> -->
+  <!--       <img class="w-6" alt="here" src="/icons/shield-half-outline.svg" /> -->
+  <!--     </div> -->
+  <!--     <h2>Blockchain</h2> -->
+  <!--     <p>Building and deploying should be as easy as a single tap.</p> -->
+  <!--   </div> -->
+  <!--   <div> -->
+  <!--     <img src="" /> -->
+  <!--     <h2>Blockchain</h2> -->
+  <!--     <p>Something here</p> -->
+  <!--   </div> -->
+  <!--   <div> -->
+  <!--     <img src="" /> -->
+  <!--     <h2>Blockchain</h2> -->
+  <!--     <p>Something here</p> -->
+  <!--   </div> -->
+  <!-- </section> -->
 
   <section class="flex justify-center pt-8 pb-12">
     <a href="https://calendly.com/lpc-squad-temporal/30min" target="_blank"
