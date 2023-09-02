@@ -10,15 +10,28 @@
 		</div>
 	</header>
 
-	<section class="relative isolate h-[36rem] bg-slate-900 pb-14 md:h-[34rem]">
+	<section class="relative isolate h-screen bg-slate-900 pb-14">
 		<video class="absolute z-0 h-full w-full object-cover" autoplay muted loop>
 			<source src="/background.mp4" />
 		</video>
 		<div class="absolute inset-0 bg-zinc-600 mix-blend-multiply" />
-		<div class="relative z-10 flex h-full flex-col items-center justify-center gap-2 px-10">
-			<img class="w-24" alt="Logo" src="/logo.png" />
-			<h1 class="text-5xl font-extrabold">Chiro Tech</h1>
-			<p class="text-xl">Construyendo el futuro juntos: <strong>Un bloque a la vez</strong></p>
+		<div class="absolute inset-0 bg-gradient-to-t from-zinc-600 mix-blend-multiply" />
+		<div class="relative z-10 flex h-full flex-col items-center justify-center gap-4 px-10">
+			<img class="w-20 md:w-24 lg:w-32" alt="Logo" src="/logo.png" />
+			<h1 class="text-5xl font-extrabold md:text-6xl lg:text-8xl">ChiroTech</h1>
+			<p class="text-center text-lg md:text-left md:text-xl lg:text-3xl">
+				Construyendo el futuro juntos: <strong>Un bloque a la vez</strong>
+			</p>
+
+			<div class="absolute bottom-6 sm:bottom-1/3 lg:bottom-1/4">
+				<a
+					href="https://calendly.com/lpc-squad-temporal/30min"
+					target="_blank"
+					rel="noreferrer noopener"
+					class="rounded-md border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
+					>Charlemos</a
+				>
+			</div>
 		</div>
 	</section>
 
@@ -41,16 +54,6 @@
 	<!--     <p>Something here</p> -->
 	<!--   </div> -->
 	<!-- </section> -->
-
-	<section class="flex justify-center pb-12 pt-8">
-		<a
-			href="https://calendly.com/lpc-squad-temporal/30min"
-			target="_blank"
-			rel="noreferrer noopener"
-			class="rounded-md border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
-			>Charlemos</a
-		>
-	</section>
 
 	<section class="flex flex-col gap-8">
 		<div
