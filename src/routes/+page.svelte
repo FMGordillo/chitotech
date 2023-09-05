@@ -22,17 +22,17 @@
 			<p class="text-center text-lg md:text-left md:text-xl lg:text-3xl">
 				Construyendo el futuro juntos: <strong>Un bloque a la vez</strong>
 			</p>
-
-			<div class="absolute bottom-6 sm:bottom-1/3 lg:bottom-1/4">
-				<a
-					href="https://calendly.com/lpc-squad-temporal/30min"
-					target="_blank"
-					rel="noreferrer noopener"
-					class="rounded-md border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
-					>Charlemos</a
-				>
-			</div>
 		</div>
+
+    <div class="absolute text-center bottom-6 inset-x-0 sm:bottom-1/4 lg:bottom-1/4">
+      <a
+        href="https://calendly.com/lpc-squad-temporal/30min"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="rounded-md border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
+        >Charlemos</a
+      >
+    </div>
 	</section>
 
 	<!-- <section class="flex justify-center basis-14 gap-8"> -->
