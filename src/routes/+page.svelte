@@ -12,7 +12,7 @@
   >
     <div class="flex items-center gap-2">
       <img class="w-10" alt="Logo" src="/logo.png" />
-      <span class="font-bold">Chiro Tech</span>
+      <span class="hidden sm:block font-bold">ChiroTech</span>
     </div>
     <a
       href={CALENDLY_URL}
