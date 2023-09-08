@@ -1,4 +1,5 @@
 <script>
+  import { _ } from 'svelte-i18n'
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
 </script>
 
@@ -52,7 +53,7 @@
       </div>
 
       <p class="text-center text-lg md:text-left md:text-xl lg:text-2xl">
-        Construyendo el futuro juntos: <strong>Un bloque a la vez</strong>
+        {$_('subtitle_1')} <strong>{$_('subtitle_2')}</strong>
       </p>
 
       <a
