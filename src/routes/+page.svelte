@@ -1,5 +1,5 @@
 <script>
-  const CALENDLY_URL = "https://calendly.com/lpc-squad-temporal/30min";
+  const CALENDLY_URL = "https://calendly.com/chirotech/30min";
 </script>
 
 <head>
