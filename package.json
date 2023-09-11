@@ -34,7 +34,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@smui/snackbar": "7.0.0-beta.15",
 		"svelte-loading-spinners": "^0.3.4"
 	}
 }

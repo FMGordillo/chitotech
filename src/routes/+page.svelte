@@ -63,11 +63,20 @@
   let loading = false;
 
   // Para el snackbar
+<<<<<<< HEAD
   let onSuccess = false;
   let onError = false;
   let snackbar: HTMLElement;
   let snackbarMsg = "sucess";
   let snackbarOpen = true;
+=======
+  let onSuccess = false
+  let onError = false
+  let snackbar: HTMLElement
+  let snackbarMsg: string
+  let snackbarOpen = false
+
+>>>>>>> f5fc7ca (borre unos import falopa)
 
   const showSnackbar = (status: Number) => {
     if (status == 201) {
@@ -129,7 +138,28 @@
     class="text-l rounded-full border border-gray-300 px-4 py-2 hover:bg-cyan-800"
     >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
   >
+<<<<<<< HEAD
 </header>
+=======
+    <div class="flex items-center gap-2">
+      <img class="w-10" alt="Logo" src="/logo.png" />
+      <span class="hidden font-bold sm:block">ChiroTech</span>
+    </div>
+    <a
+      href={CALENDLY_URL}
+      target="_blank"
+      rel="noreferrer noopener"
+      class="text-l rounded-full border border-gray-300 px-4 py-2 hover:bg-cyan-800"
+      data-translation=""
+      >Charlemos <span aria-hidden="true">🗓️</span></a
+    >
+  </header>
+
+  <section class="relative inset-x-0 isolate bg-slate-900 pb-14">
+    <video class="absolute z-0 h-full w-full object-cover" autoplay muted loop>
+      <source src="/background.mp4" />
+    </video>
+>>>>>>> f5fc7ca (borre unos import falopa)
 
 <section class="relative isolate grid h-screen">
   <div class="absolute inset-0 overflow-hidden">
