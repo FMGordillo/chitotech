@@ -32,5 +32,9 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@smui/snackbar": "7.0.0-beta.15",
+		"svelte-loading-spinners": "^0.3.4"
+	}
 }

@@ -1,7 +1,11 @@
-<script>
+<script lang="ts">
+  import { Jumper } from "svelte-loading-spinners";
   import Button from "../components/Button.svelte";
   import IntersectionObserver from "./IntersectionObserver.svelte";
   import { _ } from "svelte-i18n";
+
+  const VITE_URL_BACKEND =
+    import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
 
   let isIntersectingHeader = true;
@@ -44,6 +48,67 @@
       behavior: "smooth",
     });
   }
+
+  // Para el form
+  let name = "";
+  let email = "";
+  let msg = "";
+  const clearFormData = () => {
+    name = "";
+    email = "";
+    msg = "";
+  };
+
+  // Para el spinner
+  let loading = false;
+
+  // Para el snackbar
+  let onSuccess = false;
+  let onError = false;
+  let snackbar: HTMLElement;
+  let snackbarMsg = "sucess";
+  let snackbarOpen = true;
+
+  const showSnackbar = (status: Number) => {
+    if (status == 201) {
+      snackbarMsg = "Message sent successfully!";
+      snackbarOpen = true;
+      onSuccess = true;
+    } else {
+      snackbarMsg = "Whoops!";
+      onError = true;
+    }
+    setTimeout(() => {
+      closeSnackbar();
+    }, 3000);
+  };
+
+  const closeSnackbar = () => {
+    snackbarMsg = "";
+    snackbarOpen = false;
+  };
+
+  const handleSnackbarClosed = () => {
+    closeSnackbar();
+  };
+
+  const handleSubmit = async () => {
+    loading = true;
+    const response = await fetch(VITE_URL_BACKEND + "message", {
+      method: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, msg }),
+    });
+    // solo para ver el spinner
+    setTimeout(() => {
+      loading = false;
+      clearFormData();
+      showSnackbar(response.status);
+    }, 2000);
+  };
 </script>
 
 <head>
@@ -93,7 +158,9 @@
       <Button href={CALENDLY_URL} target="_blank" rel="noreferrer noopener"
         >{$_("lets_talk")}</Button
       >
-      <Button href="#about_us" onClick={handleAboutUsScroll}>{$_("about_us")}</Button>
+      <Button href="#about_us" onClick={handleAboutUsScroll}
+        >{$_("about_us")}</Button
+      >
     </div>
   </div>
 </section>
@@ -203,6 +270,109 @@
   {$_("contact_us")}
 </h1>
 
+<div class="my-20 flex flex-col items-center gap-2">
+  <h1 class="my-10 text-4xl font-extrabold md:text-5xl lg:text-6xl">
+    Contact us
+  </h1>
+
+  <form
+    class="w-full max-w-xl"
+    method="POST"
+    on:submit|preventDefault={handleSubmit}
+  >
+    <div class="mb-6 md:flex md:items-center">
+      <div class="md:w-1/3">
+        <label
+          class="mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right"
+          for="name"
+        >
+          Your name
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <input
+          class="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none"
+          id="name"
+          name="name"
+          required
+          type="text"
+          bind:value={name}
+        />
+      </div>
+    </div>
+
+    <div class="mb-6 md:flex md:items-center">
+      <div class="md:w-1/3">
+        <label
+          class="mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right"
+          for="email"
+        >
+          Your email
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <input
+          class="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none"
+          id="email"
+          name="email"
+          required
+          type="email"
+          bind:value={email}
+        />
+      </div>
+    </div>
+
+    <div class="mb-6 md:flex md:items-center">
+      <div class="md:w-1/3">
+        <label
+          class="mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right"
+          for="msg"
+        >
+          Message
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <textarea
+          class="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none"
+          id="msg"
+          name="msg"
+          placeholder="Write your feelings down uwu"
+          rows="5"
+          required
+          bind:value={msg}
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+      <div class="md:w-1/3"></div>
+      <div class="md:w-2/3">
+        {#if loading}
+          <Jumper size="60" color="#87CEEB" unit="px" />
+        {:else}
+          <button
+            class="mt-4 rounded-full border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
+            type="submit"
+          >
+            Contact us!
+          </button>
+        {/if}
+      </div>
+    </div>
+  </form>
+</div>
+<div
+  bind:this={snackbar}
+  class="snackbar"
+  class:open={snackbarOpen}
+  class:success={onSuccess}
+  class:error={onError}
+>
+  <p>{snackbarMsg}</p>
+  <button on:click={handleSnackbarClosed}>X</button>
+</div>
+>>>>>>> 5fcf468 (snackbar + fix en el config porque no andaba ts)
+
 <style>
   @keyframes background {
     0% {
@@ -216,5 +386,33 @@
   #animated_background {
     height: calc(100vh * 2);
     animation: background 10s linear infinite;
+  }
+
+  .snackbar {
+    visibility: hidden;
+    background-color: rgb(65, 65, 62);
+    min-width: 300px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .success {
+    background-color: rgb(6, 129, 37);
+  }
+  .error {
+    background-color: rgb(126, 8, 8);
   }
 </style>
