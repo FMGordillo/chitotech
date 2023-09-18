@@ -4,7 +4,7 @@
   import { inject } from "@vercel/analytics";
 
   import { browser } from "$app/environment";
-  import "$lib/i18n"; // Import to initialize. Important :)
+  import "$lib/i18n";
   import { locale, waitLocale } from "svelte-i18n";
 
   inject({ mode: dev ? "development" : "production" });
