@@ -1,4 +1,5 @@
 <script>
+  import { _ } from "svelte-i18n";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
 </script>
 
@@ -19,7 +20,7 @@
       target="_blank"
       rel="noreferrer noopener"
       class="text-l rounded-full border border-gray-300 px-4 py-2 hover:bg-cyan-800"
-      >Charlemos <span aria-hidden="true">🗓️</span></a
+      >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
     >
   </header>
 
@@ -34,7 +35,7 @@
 
     <!-- Content  -->
     <div
-      class="relative z-10 flex h-full flex-col items-center justify-center gap-6 py-16 px-10"
+      class="relative z-10 flex h-full flex-col items-center justify-center gap-6 px-10 py-16"
     >
       <div class="flex flex-col items-center gap-4 sm:hidden">
         <img class="w-20 md:w-24 lg:w-32" alt="Logo" src="/logo.png" />
@@ -44,23 +45,23 @@
       </div>
 
       <div class="hidden items-center gap-4 sm:flex">
-        <img class="w-20 md:w-24 lg:w-30" alt="Logo" src="/logo.png" />
+        <img class="lg:w-30 w-20 md:w-24" alt="Logo" src="/logo.png" />
         <h1 class="text-4xl font-extrabold md:text-6xl lg:text-6xl">
           ChiroTech
         </h1>
-        <img class="w-20 md:w-24 lg:w-30" alt="Logo" src="/logo.png" />
+        <img class="lg:w-30 w-20 md:w-24" alt="Logo" src="/logo.png" />
       </div>
 
       <p class="text-center text-lg md:text-left md:text-xl lg:text-2xl">
-        Construyendo el futuro juntos: <strong>Un bloque a la vez</strong>
+        {$_("subtitle_1")} <strong>{$_("subtitle_2")}</strong>
       </p>
 
       <a
         href={CALENDLY_URL}
         target="_blank"
         rel="noreferrer noopener"
-        class="rounded-full border-2 border-gray-300 bg-gray-700 mt-4 px-8 py-4 text-xl hover:bg-cyan-800"
-        >Charlemos <span aria-hidden="true">🗓️</span></a
+        class="mt-4 rounded-full border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
+        >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
       >
     </div>
 
@@ -69,26 +70,6 @@
       to-stone-950"
     />
   </section>
-
-  <!-- <section class="flex justify-center basis-14 gap-8"> -->
-  <!--   <div class="grid grid-cols-[24px_auto] gap-x-8 grid-rows-[auto_auto]"> -->
-  <!--     <div class="flex rounded justify-center items-center w-12 h-12 bg-zinc-200 row-span-2"> -->
-  <!--       <img class="w-6" alt="here" src="/icons/shield-half-outline.svg" /> -->
-  <!--     </div> -->
-  <!--     <h2>Blockchain</h2> -->
-  <!--     <p>Building and deploying should be as easy as a single tap.</p> -->
-  <!--   </div> -->
-  <!--   <div> -->
-  <!--     <img src="" /> -->
-  <!--     <h2>Blockchain</h2> -->
-  <!--     <p>Something here</p> -->
-  <!--   </div> -->
-  <!--   <div> -->
-  <!--     <img src="" /> -->
-  <!--     <h2>Blockchain</h2> -->
-  <!--     <p>Something here</p> -->
-  <!--   </div> -->
-  <!-- </section> -->
 
   <section class="isolate flex flex-col gap-8">
     <div
@@ -99,7 +80,7 @@
         class="z-10 flex h-full flex-col justify-center gap-2 bg-gradient-to-r from-teal-950 to-transparent p-8"
       >
         <h1 class="border-l-2 border-teal-600 pl-5 text-xl font-bold">
-          🔒 Innovación en Blockchain
+          🔒 {$_('section_1-title')}
         </h1>
         <p class="leading-relaxed text-neutral-300">
           Nuestro equipo domina la tecnología blockchain, creando contratos
