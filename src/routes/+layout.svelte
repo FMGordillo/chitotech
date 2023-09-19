@@ -1,11 +1,12 @@
 <script>
+  import "@fontsource/open-sans";
   import "../app.css";
   import { dev } from "$app/environment";
   import { inject } from "@vercel/analytics";
 
   import { browser } from "$app/environment";
   import "$lib/i18n";
-  import { locale, waitLocale } from "svelte-i18n";
+  import { locale, waitLocale, isLoading } from "svelte-i18n";
 
   inject({ mode: dev ? "development" : "production" });
 
@@ -17,7 +18,13 @@
   };
 </script>
 
-<slot />
+
+<!-- This is async, crap. -->
+{#if $isLoading}
+  <span>Loading...</span>
+{:else}
+  <slot />
+{/if}
 
 <style>
   :global(body) {
