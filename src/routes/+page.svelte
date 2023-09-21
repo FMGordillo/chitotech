@@ -27,18 +27,20 @@
   >
 </header>
 
-<section class="relative grid h-screen pt-48 md:pt-80">
+<section class="relative grid h-screen ">
   <div class="absolute inset-0 overflow-hidden">
     <div
       id="animated_background"
-      class="absolute bg-left-center inset-0 z-0 bg-[url('/background_animated.svg')]"
+      class="absolute bg-contain bg-left-center inset-0 z-0 bg-[url('/background_animated.svg')]"
     />
   </div>
+
   <div
     class="absolute inset-0 z-0 bg-[url('/background_title.svg')] bg-right-bottom bg-repeat-x"
   />
+
   <div
-    class="z-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 md:grid-cols-2"
+    class="pt-48 z-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 md:grid-cols-2 md:pt-80"
   >
     <div class="flex flex-col gap-4">
       <div class="flex gap-4">
