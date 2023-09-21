@@ -2,8 +2,12 @@
   "subtitle_1": "Building the future together:",
   "subtitle_2": "One block at a time",
   "lets_talk": "Let's talk",
+  "about_us": "About us",
+  "what_we_do": "What we do",
   "section_1-title": "Innovation in Blockchain",
   "section_1-text": "We are experts in Blockchain application development, crafting innovative and secure solutions that drive the technological revolution.",
-  "section_2-title": "Innovation in Blockchain",
-  "section_2-text": "We are experts in Blockchain application development, crafting innovative and secure solutions that drive the technological revolution."
+  "section_2-title": "Protecting your Assets",
+  "section_2-text": "We specialize in strengthening your digital assets against evolving threats, implementing cutting-edge security protocols to keep your systems and data safe.",
+  "section_3-title": "Shaping the Future",
+  "section_3-text": "With diverse expertise in JavaScript, TypeScript, and more, we lead innovation in Web3, HTMX, and Svelte to take your projects to the next level."
 }
