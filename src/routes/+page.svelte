@@ -16,7 +16,7 @@
 >
   <div class="flex items-center gap-2">
     <img class="w-10" alt="Logo" src="/logo.png" />
-    <span class="hidden font-bold sm:block">ChiroTech</span>
+    <span class="hidden font-bold md:block">ChiroTech</span>
   </div>
   <a
     href={CALENDLY_URL}
@@ -27,17 +27,25 @@
   >
 </header>
 
-<section
-  class="grid h-screen bg-[url('/background_title.svg')] bg-cover bg-center
-  bg-no-repeat pt-48 md:pt-64"
->
-  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 md:grid-cols-2">
+<section class="relative grid h-screen pt-48 md:pt-80">
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      id="animated_background"
+      class="absolute bg-left-center inset-0 z-0 bg-[url('/background_animated.svg')]"
+    />
+  </div>
+  <div
+    class="absolute inset-0 z-0 bg-[url('/background_title.svg')] bg-right-bottom bg-repeat-x"
+  />
+  <div
+    class="z-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 md:grid-cols-2"
+  >
     <div class="flex flex-col gap-4">
       <div class="flex gap-4">
         <img class="hidden h-16 w-16 md:block" src="/logo.png" />
         <h1 class="text-6xl font-bold">ChiroTech</h1>
       </div>
-      <p class="">Nuestro lema, <strong>muy importante</strong></p>
+      <p class="">{$_("subtitle_1")} <strong>{$_("subtitle_2")}</strong></p>
     </div>
 
     <div class="flex flex-col items-center gap-4">
@@ -47,7 +55,12 @@
   </div>
 </section>
 
-<h1 class="mt-32 text-center text-2xl">What we do</h1>
+<h1
+  class="bg-[url('/background_title-reversed.svg')] bg-left-top bg-repeat-x pt-80
+  text-center text-4xl"
+>
+  What we do
+</h1>
 
 <section
   class="flex h-96 items-center bg-[url('/background_blockchain.svg')] bg-no-repeat"
@@ -56,11 +69,10 @@
   <div class="w-3/5">
     <div class="flex max-w-xs flex-col gap-2">
       <h1 class="border-l-2 border-teal-500 pl-5 text-xl font-bold">
-        Something to tell
+        {$_("section_1-title")}
       </h1>
       <p>
-        Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,Lorem
-        ipsum,Lorem ipsum,Lorem ipsum
+        {$_("section_1-text")}
       </p>
     </div>
   </div>
@@ -73,11 +85,10 @@
   <div class="w-4/5">
     <div class="flex max-w-xs flex-col gap-2">
       <h1 class="border-l-2 border-teal-500 pl-5 text-xl font-bold">
-        Something to tell
+        {$_("section_2-title")}
       </h1>
       <p>
-        Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,Lorem
-        ipsum,Lorem ipsum,Lorem ipsum
+        {$_("section_2-text")}
       </p>
     </div>
   </div>
@@ -90,3 +101,19 @@
     ipsum,Lorem ipsum,Lorem ipsum
   </p>
 </section>
+
+<style>
+  @keyframes background {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+  }
+
+  #animated_background {
+    height: calc(100vh * 2);
+    animation: background 10s linear infinite;
+  }
+</style>
