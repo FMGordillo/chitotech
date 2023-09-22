@@ -1,11 +1,9 @@
 lockfileVersion: '6.0'
 
-dependencies:
+devDependencies:
   '@fontsource/open-sans':
     specifier: ^5.0.12
     version: 5.0.12
-
-devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.1.0(@sveltejs/kit@1.22.6)
@@ -513,7 +511,7 @@ packages:
 
   /@fontsource/open-sans@5.0.12:
     resolution: {integrity: sha512-Ptri5McmTGEJkQ5nvGQeJX8YdGbZpOT6V03By1pISIPZygO/ps4bQIvwPO+X/WtBY+2C1xKeyqx7LX+3fxlo2A==}
-    dev: false
+    dev: true
 
   /@formatjs/ecma402-abstract@1.11.4:
     resolution: {integrity: sha512-EBikYFp2JCdIfGEb5G9dyCkTGDmC57KSHhRQOC3aYxoPWVZvfWCDjZwkGYHN7Lis/fmuWl906bnNTJifDQ3sXw==}
