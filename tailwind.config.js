@@ -2,7 +2,14 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,css}'],
 	theme: {
-		extend: {}
+    fontFamily: {
+      sans: ['Open Sans'],
+    },
+		extend: {
+      backgroundImage: {
+        'blockchain-image': 'url(/background.png)',
+      },
+    }
 	},
 	plugins: []
 };

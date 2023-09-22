@@ -2,5 +2,14 @@
   "subtitle_1": "Construyendo el futuro juntos:",
   "subtitle_2": "Un bloque a la vez",
   "lets_talk": "Charlemos",
-  "section_1-title":"Innovación en Blockchain"
+  "about_us": "Sobre nosotros",
+  "about_team": "El equipo",
+  "what_we_do": "Qué hacemos",
+  "contact_us": "Contáctanos",
+  "section_1-title": "Innovación en Blockchain",
+  "section_1-text": "Somos expertos en desarrollo de aplicaciones Blockchain, creando soluciones innovadoras y seguras que impulsan la revolución tecnológica.",
+  "section_2-title": "Protegiendo tus activos",
+  "section_2-text": "Nos especializamos en fortalecer tus activos digitales contra amenazas cambiantes, implementando protocolos de seguridad de vanguardia para mantener tus sistemas y datos a salvo.",
+  "section_3-title": "Formando el Futuro",
+  "section_3-text": "Con experiencias variadas en JavaScript, TypeScript y más, lideramos la innovación en Web3, HTMX y Svelte para llevar tus proyectos al siguiente nivel."
 }

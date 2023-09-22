@@ -1,146 +1,220 @@
 <script>
+  import Button from "../components/Button.svelte";
+  import IntersectionObserver from "./IntersectionObserver.svelte";
   import { _ } from "svelte-i18n";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
+
+  let isIntersectingHeader = true;
+
+  const team = [
+    {
+      name: "Santiago Feijoó",
+      role: "Chief Tech Officer",
+      image: "team_santiago.jpeg",
+      url: "https://www.linkedin.com/in/santiago-iv%C3%A1n-feijoo-b6b72b1a4/",
+    },
+    {
+      name: "Matias Gonzalez",
+      role: "Chief Sales Officer",
+      image: "team_matias.jpeg",
+      url: "https://www.linkedin.com/in/mat%C3%ADas-gonz%C3%A1lez-6a8228155/",
+    },
+    {
+      name: "Facundo Gordillo",
+      role: "CEO & Founder",
+      image: "team_facundo.jpeg",
+      url: "https://www.linkedin.com/in/fmgordillo/",
+    },
+  ];
+
+  // All team members are equal here
+  for (let i = team.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let k = team[i];
+    team[i] = team[j];
+    team[j] = k;
+  }
+
+  function handleAboutUsScroll(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    target.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 </script>
 
 <head>
   <title>Chiro Tech - Software Consultancy</title>
 </head>
 
-<main class="">
-  <header
-    class="sticky inset-x-0 top-0 z-10 mx-auto flex justify-between bg-zinc-950 p-4"
+<header
+  class="fixed inset-x-0 top-0 z-10 mx-auto flex justify-between bg-zinc-950 p-4 transition"
+>
+  <div class="flex items-center gap-2">
+    <img class="w-10" alt="Logo" src="/logo.png" />
+    <span class="hidden font-extrabold md:block">ChiroTech</span>
+  </div>
+  <a
+    href={CALENDLY_URL}
+    target="_blank"
+    rel="noreferrer noopener"
+    class="text-l rounded-full border border-gray-300 px-4 py-2 hover:bg-cyan-800"
+    >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
   >
-    <div class="flex items-center gap-2">
-      <img class="w-10" alt="Logo" src="/logo.png" />
-      <span class="hidden font-bold sm:block">ChiroTech</span>
-    </div>
-    <a
-      href={CALENDLY_URL}
-      target="_blank"
-      rel="noreferrer noopener"
-      class="text-l rounded-full border border-gray-300 px-4 py-2 hover:bg-cyan-800"
-      >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
-    >
-  </header>
+</header>
 
-  <section class="relative inset-x-0 isolate bg-slate-900 pb-14">
-    <video class="absolute z-0 h-full w-full object-cover" autoplay muted loop>
-      <source src="/background.mp4" />
-    </video>
-
+<section class="relative isolate grid h-screen">
+  <div class="absolute inset-0 overflow-hidden">
     <div
-      class="absolute inset-0 bg-gradient-to-t from-transparent to-zinc-700 mix-blend-multiply"
+      id="animated_background"
+      class="bg-left-center absolute inset-0 z-0 bg-[url('/background_animated.svg')] bg-contain"
     />
+  </div>
 
-    <!-- Content  -->
-    <div
-      class="relative z-10 flex h-full flex-col items-center justify-center gap-6 px-10 py-16"
-    >
-      <div class="flex flex-col items-center gap-4 sm:hidden">
-        <img class="w-20 md:w-24 lg:w-32" alt="Logo" src="/logo.png" />
-        <h1 class="text-4xl font-extrabold md:text-6xl lg:text-7xl">
-          ChiroTech
-        </h1>
+  <div
+    class="absolute inset-0 z-0 bg-[url('/background_title.svg')] bg-right-bottom bg-repeat-x"
+  />
+
+  <div
+    class="z-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 pt-48 md:grid-cols-2 md:pt-80"
+  >
+    <div class="flex flex-col gap-4">
+      <div class="flex gap-4">
+        <img class="hidden h-16 w-16 md:block" src="/logo.png" />
+        <h1 class="text-5xl font-extrabold sm:text-6xl">ChiroTech</h1>
       </div>
+      <p class="">{$_("subtitle_1")} <strong>{$_("subtitle_2")}</strong></p>
+    </div>
 
-      <div class="hidden items-center gap-4 sm:flex">
-        <img class="lg:w-30 w-20 md:w-24" alt="Logo" src="/logo.png" />
-        <h1 class="text-4xl font-extrabold md:text-6xl lg:text-6xl">
-          ChiroTech
-        </h1>
-        <img class="lg:w-30 w-20 md:w-24" alt="Logo" src="/logo.png" />
-      </div>
+    <div class="flex flex-col items-center gap-4">
+      <Button href={CALENDLY_URL} target="_blank" rel="noreferrer noopener"
+        >{$_("lets_talk")}</Button
+      >
+      <Button href="#about_us" onClick={handleAboutUsScroll}>{$_("about_us")}</Button>
+    </div>
+  </div>
+</section>
 
-      <p class="text-center text-lg md:text-left md:text-xl lg:text-2xl">
-        {$_("subtitle_1")} <strong>{$_("subtitle_2")}</strong>
+<h1
+  id="about_us"
+  class="flex h-96 items-center justify-center
+  bg-[url('/background_title-reversed.svg')] bg-left-top bg-repeat-x pt-40
+  text-center text-4xl font-bold"
+>
+  {$_("what_we_do")}
+</h1>
+
+<section
+  class="relative isolate flex h-96 flex-row-reverse items-center px-4
+  md:pr-20 lg:justify-center lg:px-0"
+>
+  <div
+    class="absolute inset-0 z-0 bg-[url('/background_blockchain.svg')] bg-no-repeat"
+  />
+  <div class="z-10 max-w-md rounded-md bg-cyan-950/70 p-8">
+    <div class="flex max-w-xs flex-col gap-2">
+      <h1 class="border-l-2 border-teal-500 pl-2 text-xl font-bold">
+        🔒 {$_("section_1-title")}
+      </h1>
+      <p>
+        {$_("section_1-text")}
       </p>
-
-      <a
-        href={CALENDLY_URL}
-        target="_blank"
-        rel="noreferrer noopener"
-        class="mt-4 rounded-full border-2 border-gray-300 bg-gray-700 px-8 py-4 text-xl hover:bg-cyan-800"
-        >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
-      >
     </div>
+  </div>
+  <div
+    class="absolute inset-0 z-0 hidden bg-[url('/background_blockchain-reversed.svg')] bg-right bg-no-repeat lg:block"
+  />
+</section>
 
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-transparent
-      to-stone-950"
-    />
-  </section>
-
-  <section class="isolate flex flex-col gap-8">
-    <div
-      class="relative grid h-80 grid-cols-[1fr]
-      items-center sm:grid-cols-[2fr_1fr] md:grid-cols-[1fr_1fr]"
-    >
-      <div
-        class="z-10 flex h-full flex-col justify-center gap-2 bg-gradient-to-r from-teal-950 to-transparent p-8"
-      >
-        <h1 class="border-l-2 border-teal-600 pl-5 text-xl font-bold">
-          🔒 {$_('section_1-title')}
-        </h1>
-        <p class="leading-relaxed text-neutral-300">
-          Nuestro equipo domina la tecnología blockchain, creando contratos
-          inteligentes y aplicaciones descentralizadas seguras que redefinen la
-          confianza digital.
-        </p>
-      </div>
-      <img
-        class="absolute right-0 max-h-full"
-        alt="blockchain"
-        src="https://images.unsplash.com/photo-1639322537231-2f206e06af84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80"
-      />
+<section
+  class="relative isolate flex h-96 items-center px-4
+  md:pl-20 lg:justify-center lg:px-0"
+>
+  <div
+    class="absolute inset-0 z-0 hidden bg-[url('/background_cybersecurity-reversed.svg')] bg-no-repeat lg:block"
+  />
+  <div class="z-10 max-w-md rounded-md bg-sky-950/70 p-8">
+    <div class="flex max-w-xs flex-col gap-2">
+      <h1 class="border-l-2 border-sky-500 pl-2 text-xl font-bold">
+        🛡️ {$_("section_2-title")}
+      </h1>
+      <p>
+        {$_("section_2-text")}
+      </p>
     </div>
+  </div>
+  <div
+    class="absolute inset-0 z-0
+    bg-[url('/background_cybersecurity.svg')] bg-right bg-no-repeat"
+  />
+</section>
 
-    <div
-      class="relative grid h-80 grid-cols-[1fr]
-      items-center sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_1fr]"
-    >
-      <div
-        class="z-10 col-start-2 flex h-full flex-col justify-center gap-2 bg-gradient-to-l
-        from-sky-950 to-transparent p-8"
-      >
-        <h1 class="border-l-2 border-sky-500 pl-5 text-xl font-bold">
-          🛡️ Protegiendo tus activos
-        </h1>
-        <p class="leading-relaxed text-neutral-300">
-          Nos especializamos en fortalecer tus activos digitales contra amenazas
-          cambiantes, implementando protocolos de seguridad de vanguardia para
-          mantener tus sistemas y datos a salvo.
-        </p>
-      </div>
-      <img
-        alt="cybersecurity"
-        class="absolute left-0 max-h-full"
-        src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      />
+<section
+  class="relative isolate flex h-96 flex-row-reverse items-center px-4
+  md:pr-20 lg:justify-center lg:px-0"
+>
+  <div
+    class="absolute inset-0 z-0 bg-[url('/background_team.svg')] bg-no-repeat"
+  />
+  <div class="z-10 max-w-md rounded-md bg-red-950/70 p-8">
+    <div class="flex max-w-xs flex-col gap-2">
+      <h1 class="border-l-2 border-red-500 pl-2 text-xl font-bold">
+        🚀 {$_("section_3-title")}
+      </h1>
+      <p>
+        {$_("section_3-text")}
+      </p>
     </div>
+  </div>
+  <div
+    class="absolute inset-0 z-0 hidden bg-[url('/background_team-reversed.svg')] bg-right bg-no-repeat lg:block"
+  />
+</section>
 
-    <div
-      class="relative grid h-80 grid-cols-[1fr]
-      items-center sm:grid-cols-[2fr_1fr] md:grid-cols-[1fr_1fr]"
-    >
-      <div
-        class="z-10 flex h-full flex-col justify-center gap-2 bg-gradient-to-r
-        from-red-950 to-transparent p-8"
-      >
-        <h1 class="border-l-2 border-red-600 pl-5 text-xl font-bold">
-          🚀 Formando el Futuro
-        </h1>
-        <p class="leading-relaxed text-neutral-300">
-          Con experiencias variadas en JavaScript, TypeScript y más, lideramos
-          la innovación en Web3, HTMX y Svelte para llevar tus proyectos al
-          siguiente nivel.
-        </p>
-      </div>
-      <img
-        alt="team meeting"
-        class="absolute right-0 max-h-full"
-        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      />
-    </div>
-  </section>
-</main>
+<h1
+  class="flex h-56 items-center justify-center text-center text-4xl font-bold"
+>
+  {$_("about_team")}
+</h1>
+
+<section class="container mx-auto px-8">
+  <ul class="flex flex-wrap justify-center gap-8">
+    {#each team as member}
+      <a target="_blank" rel="noreferrer noopener" href={member.url}>
+        <li class="flex flex-col items-center">
+          <img
+            src={`/${member.image}`}
+            class="mb-2 w-32 rounded-lg object-cover"
+          />
+          <h1 class="font-semibold">{member.name}</h1>
+          <h2>{member.role}</h2>
+        </li>
+      </a>
+    {/each}
+  </ul>
+</section>
+
+<h1
+  class="flex h-56 items-center justify-center text-center text-4xl font-bold"
+>
+  {$_("contact_us")}
+</h1>
+
+<style>
+  @keyframes background {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+  }
+
+  #animated_background {
+    height: calc(100vh * 2);
+    animation: background 10s linear infinite;
+  }
+</style>
