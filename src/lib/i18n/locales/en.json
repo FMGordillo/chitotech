@@ -11,5 +11,18 @@
   "section_2-title": "Protecting your Assets",
   "section_2-text": "We specialize in strengthening your digital assets against evolving threats, implementing cutting-edge security protocols to keep your systems and data safe.",
   "section_3-title": "Shaping the Future",
-  "section_3-text": "With diverse expertise in JavaScript, TypeScript, and more, we lead innovation in Web3, HTMX, and Svelte to take your projects to the next level."
+  "section_3-text": "With diverse expertise in JavaScript, TypeScript, and more, we lead innovation in Web3, HTMX, and Svelte to take your projects to the next level.",
+  "form-title": "Contact us",
+  "form-subtitle": "Fill out the form below and we'll get back to you as soon as possible",
+  "form-label-name": "Name",
+  "form-placeholder-name": "Enter your name",
+  "form-label-organization": "Organization",
+  "form-placeholder-organization": "Enter your organization name",
+  "form-placeholder-email": "Enter your email",
+  "form-label-msg": "Leave us a message",
+  "form-placeholder-msg": "Enter your message",
+  "form-button-text": "Send",
+  "snackbar-ok": "Message sent successfully!",
+  "snackbar-failed": "Whoops! Something went wrong",
+  "rights": "All rights reserved"
 }
