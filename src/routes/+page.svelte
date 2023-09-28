@@ -7,6 +7,7 @@
   import { defaultLocale, locales } from "$lib/i18n"
   import Logo from "../components/Logo.svelte";
   import Footer from "../components/Footer.svelte";
+  import { onMount } from "svelte";
 
   const VITE_URL_BACKEND =
     import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
@@ -120,6 +121,35 @@
       loading = false
     }
   };
+
+  let currentIndex = 0;
+  let leftBtn, rightBtn, cardsContainer: any
+
+  onMount( () => {
+    /* CAROUSEL */ 
+    leftBtn = document.getElementById("carousel__btn-left")
+    rightBtn = document.getElementById("carousel__btn-right")
+    cardsContainer = document.getElementById("cards-container") /* Voy a mover hacia los costados este contenedor */
+
+    leftBtn?.addEventListener("click", () => moveToLeft())
+    rightBtn?.addEventListener("click", () => moveToRight())
+  })
+  const moveToLeft = () => {
+    currentIndex--
+    if(currentIndex < 0){
+      currentIndex = team.length - 1
+    }
+    cardsContainer.style.transition = "all ease 0.5s"
+    cardsContainer.style.transform = `translateX(${-currentIndex*(100/team.length)}%)`
+  }
+  const moveToRight = () => {
+    currentIndex++
+    if(currentIndex >= team.length){
+      currentIndex = 0
+    }
+    cardsContainer.style.transition = "all ease 0.5s"
+    cardsContainer.style.transform = `translateX(${-currentIndex*(100/team.length)}%)`
+  }
 
 </script>
 
@@ -260,26 +290,34 @@
 </section>
 
 <h1
-  class="flex h-56 items-center justify-center text-center text-4xl font-bold"
+  class="flex h-56 items-center justify-center text-center text-4xl font-bold cool-title"
 >
   {$_("about_team")}
 </h1>
 
-<section class="container mx-auto px-8">
-  <ul class="flex flex-wrap justify-center gap-8">
-    {#each team as member}
-      <a target="_blank" rel="noreferrer noopener" href={member.url}>
-        <li class="flex flex-col items-center">
+<section class="flex flex-col items-center">
+  <div class="carousel">
+    <div class="cards-container" id="cards-container">
+      {#each team as member}
+        <div class="card">
           <img
             src={`/${member.image}`}
-            class="mb-2 w-32 rounded-lg object-cover"
+            class="card__image"
+            alt="member img"
           />
-          <h1 class="font-semibold">{member.name}</h1>
-          <h2>{member.role}</h2>
-        </li>
-      </a>
-    {/each}
-  </ul>
+          <h1 class="card__name">{member.name}</h1>
+          <h2 class="card__role">{member.role}</h2>
+        </div>
+      {/each}
+    </div>
+    <button id="carousel__btn-left" class="carousel__btn-left">
+      <img src="/left-arrow.svg" alt="left-arrow"/>
+    </button>
+    <button id="carousel__btn-right" class="carousel__btn-right">
+      <img src="/right-arrow.svg" alt="right-arrow"/>
+    </button>
+  </div>
+  
 </section>
 
 <form
@@ -287,7 +325,8 @@
    on:submit|preventDefault={handleSubmit}
  >
  <div class="flex items-center justify-center h-screen bg-[url('/background_with_opacity.svg')]">
-   <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+  
+   <div class="rounded-lg border bg-card text-card-foreground shadow-sm form-wrapper">
      <div class="p-6">
        <div class="space-y-8">
          <div class="space-y-2">
@@ -296,8 +335,8 @@
             {$_("form-subtitle")}
            </p>
          </div>
-         <div class="space-y-4">
-           <div class="grid grid-cols-2 gap-4">
+         <div class="space-y-4 fields-container">
+           <div class="grid grid-cols-2 gap-4 subcontainer">
              <div class="space-y-2">
                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="name">{$_("form-label-name")}</label>
                <input
@@ -422,5 +461,106 @@
     background-color: #00838F;
   }
 
+  
+  .carousel{
+    width: 500px;
+    height: 600px;
+    background-color: #241f31;
+    border-radius: 32px;
+    box-shadow:  -42px 42px 71px #120f18,
+                42px -42px 71px #362f4a;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel .cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0rem;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.2 ease;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%/3);
+  }
+  .card__image{
+    width: 80%;
+    padding-top: 1rem;
+    object-fit: cover;
+  }
+  .card__name{
+    font-weight: bold;
+    font-size: 25px;
+    margin: 1rem 0;
+  }
+  .card__role{
+    font-size: 20px;
+  }
+  .carousel__btn-left,
+  .carousel__btn-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* relative es el padre Carousel */
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transition: background 0.2s linear;
+    border-radius: 10px;
+  }
+  .carousel__btn-left{
+    left: 0;
+  }
+  .carousel__btn-right{
+    right: 0%;
+  }
+  .carousel__btn-left img,
+  .carousel__btn-right img{
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel__btn-left:hover, .carousel__btn-right:hover{
+    background-color: rgba(21, 19, 37, 0.671);
+  }
+  .carousel__btn-left:active, .carousel__btn-right:active{
+    box-shadow: 2px 2px 5px #d1d0d0;
+  }
+  .cool-title{
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+    font-size: 50px;
+  }
+  
+  @media (width < 600px){
+    .carousel{
+      width: 350px;
+      height: 450px;
+    }
+    .carousel .card__name{
+      font-size: 20px;
+    }
+    .carousel .card__role{
+      font-size: 15px;
+    }
+    .form-wrapper{
+      margin-right: 10px;
+    }
+    .form-wrapper .fields-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .form-wrapper .subcontainer{
+      display: block; /* asi se le sale el grid a la parte esa*/
+    }
+  }
   
 </style>

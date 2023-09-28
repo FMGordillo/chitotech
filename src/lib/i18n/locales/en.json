@@ -23,6 +23,8 @@
   "form-placeholder-msg": "Enter your message",
   "form-button-text": "Send",
   "snackbar-ok": "Message sent successfully!",
-  "snackbar-failed": "Whoops! Something went wrong",
-  "rights": "All rights reserved"
+  "snackbar-failed": "Whops! Something went wrong",
+  "rights": "All rights reserved",
+  "spain-street": "Spain: Moreto 34 St., Mataró, Barcelona",
+  "arg-street": "Argentina: Carlos Pellegrini 1149 Buenos Aires"
 }

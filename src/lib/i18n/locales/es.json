@@ -24,5 +24,7 @@
   "form-button-text": "Enviar",
   "snackbar-ok": "Mensaje enviado con éxito!",
   "snackbar-failed": "Error al enviar mensaje",
-  "rights": "Todos los derechos reservados"
+  "rights": "Todos los derechos reservados",
+  "spain-street": "España: Calle Moreto 34, Mataró, Barcelona",
+  "arg-street": "Argentina: Carlos Pellegrini 1149, Buenos Aires"
 }
