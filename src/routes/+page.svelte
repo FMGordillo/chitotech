@@ -12,7 +12,7 @@
   const VITE_URL_BACKEND =
     import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
-
+console.log(VITE_URL_BACKEND)
   let isIntersectingHeader = true;
 
   locale.set(defaultLocale);
@@ -79,7 +79,7 @@
   let snackbarOpen = false;
 
   const showSnackbar = (status: Number) => {
-    if (status == 201) {
+    if (status.toString().startsWith("20")) {
       snackbarMsg = $_("snackbar-ok");
       onSuccess = true;
     } else {
@@ -104,7 +104,7 @@
   const handleSubmit = async () => {
     try {
       loading = true;
-      const response = await fetch(VITE_URL_BACKEND + "message", {
+      const response = await fetch(`${VITE_URL_BACKEND}/message`, {
         method: "POST",
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -455,7 +455,7 @@
 
 <form method="POST" on:submit|preventDefault={handleSubmit}>
   <div
-    class="flex h-screen items-center justify-center bg-[url('/background_with_opacity.svg')]"
+    class="flex h-screen items-center justify-center bg-[url('/background_with_opacity.svg')] mt-40"
   >
     <div
       class="bg-card text-card-foreground form-wrapper rounded-lg border shadow-sm bg-stone-950"
@@ -693,9 +693,9 @@
   }
   .cool-title {
     text-shadow:
-      0px 0px 5px #350402,
-      0px 0px 10px #350402;
-    font-size: 50px;
+      0px 0px 5px 00838f6b,
+      0px 0px 10px 00838f6b;
+    font-size: 2.25rem;
   }
 
   @media (width < 600px) {
