@@ -1,7 +1,4 @@
 <script>
-  import "@fontsource/open-sans";
-  import "@fontsource/open-sans/600.css";
-  import "@fontsource/open-sans/800.css";
   import "../app.css";
   import { dev } from "$app/environment";
   import { inject } from "@vercel/analytics";

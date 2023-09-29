@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { Jumper } from "svelte-loading-spinners";
   import Button from "../components/Button.svelte";
-  import IntersectionObserver from "./IntersectionObserver.svelte";
-  import { _ } from "svelte-i18n";
-  import { locale } from "svelte-i18n";
-  import { defaultLocale, locales } from "$lib/i18n";
-  import Logo from "../components/Logo.svelte";
   import Footer from "../components/Footer.svelte";
+  import IntersectionObserver from "./IntersectionObserver.svelte";
+  import Logo from "../components/Logo.svelte";
+  import { Jumper } from "svelte-loading-spinners";
+  import { _ } from "svelte-i18n";
+  import { defaultLocale, locales } from "$lib/i18n";
+  import { locale } from "svelte-i18n";
   import { onMount } from "svelte";
 
   const VITE_URL_BACKEND =
@@ -161,8 +161,6 @@
 
 <head>
   <title>Chiro Tech - Software Consultancy</title>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <header
@@ -171,7 +169,8 @@
   <Logo />
   <div class="flex items-center gap-2">
     <select
-      class="button-secondary-transition h-10 rounded border border-gray-300 bg-zinc-950 pl-2 hover:bg-cyan-800"
+      class="button-secondary-transition h-10 rounded border
+      border-gray-300 bg-zinc-950 px-2 hover:bg-cyan-800"
       bind:value={$locale}
     >
       {#each locales as l}
@@ -303,16 +302,29 @@
 </section>
 
 <h1
-  class="flex h-96 items-center justify-center text-center text-4xl font-bold"
+  class="flex h-72 items-center justify-center text-center text-4xl font-bold"
 >
   {$_("our_industries")}
 </h1>
 
-<section class="container mx-auto grid grid-cols-1 gap-8 md:grid-cols-3">
+<section class="container mx-auto grid grid-cols-1 gap-8 pb-8 md:grid-cols-3">
   <!-- Sección de Finanzas -->
   <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
     <div class="text-center">
-      <ion-icon name="cash" class="mx-auto mb-4 h-16 w-16"></ion-icon>
+      <div class="mx-auto mb-4 h-16 w-16">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon"
+          viewBox="0 0 512 512"
+          ><path
+            d="M448 400H64a16 16 0 010-32h384a16 16 0 010 32zM416 448H96a16 16 0 010-32h320a16 16 0 010 32zM32 272H16v48a32 32 0 0032 32h48v-16a64.07 64.07 0 00-64-64z"
+          /><path
+            d="M480 240h16v-64h-16a96.11 96.11 0 01-96-96V64H128v16a96.11 96.11 0 01-96 96H16v64h16a96.11 96.11 0 0196 96v16h256v-16a96.11 96.11 0 0196-96zm-224 64a96 96 0 1196-96 96.11 96.11 0 01-96 96z"
+          /><circle cx="256" cy="208" r="64" /><path
+            d="M416 336v16h48a32 32 0 0032-32v-48h-16a64.07 64.07 0 00-64 64zM480 144h16V96a32 32 0 00-32-32h-48v16a64.07 64.07 0 0064 64zM96 80V64H48a32 32 0 00-32 32v48h16a64.07 64.07 0 0064-64z"
+          /></svg
+        >
+      </div>
       <h2 class="text-xl font-semibold">Finanzas</h2>
     </div>
     <p class="mt-2">
@@ -329,7 +341,19 @@
   <!-- Sección de Legales -->
   <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
     <div class="text-center">
-      <ion-icon name="briefcase" class="mx-auto mb-4 h-16 w-16"></ion-icon>
+      <div class="mx-auto mb-4 h-16 w-16">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon"
+          viewBox="0 0 512 512"
+          ><path
+            d="M336 80H176a16 16 0 00-16 16v16h192V96a16 16 0 00-16-16z"
+            fill="none"
+          /><path
+            d="M496 176a64.07 64.07 0 00-64-64h-48V96a48.05 48.05 0 00-48-48H176a48.05 48.05 0 00-48 48v16H80a64.07 64.07 0 00-64 64v48h480zm-144-64H160V96a16 16 0 0116-16h160a16 16 0 0116 16zM336 264a24 24 0 01-24 24H200a24 24 0 01-24-24v-4a4 4 0 00-4-4H16v144a64 64 0 0064 64h352a64 64 0 0064-64V256H340a4 4 0 00-4 4z"
+          /></svg
+        >
+      </div>
       <h2 class="text-xl font-semibold">Legales</h2>
     </div>
     <p class="mt-2">
@@ -346,7 +370,20 @@
   <!-- Sección de Salud -->
   <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
     <div class="text-center">
-      <ion-icon name="medkit" class="mx-auto mb-4 h-16 w-16"></ion-icon>
+      <div class="mx-auto mb-4 h-16 w-16">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon"
+          viewBox="0 0 512 512"
+          ><path
+            d="M336 64H176a16 16 0 00-16 16v16h192V80a16 16 0 00-16-16z"
+            fill="none"
+          /><path
+            d="M432 96h-48V80a48.05 48.05 0 00-48-48H176a48.05 48.05 0 00-48 48v16H80a64.07 64.07 0 00-64 64v256a64 64 0 0064 64h352a64 64 0 0064-64V160a64.07 64.07 0 00-64-64zm-96 208h-64v64a16 16 0 01-32 0v-64h-64a16 16 0 010-32h64v-64a16 16 0 0132 0v64h64a16 16 0 010 32zm16-208H160V80a16 16 0 0116-16h160a16 16 0 0116 16z"
+          /></svg
+        >
+      </div>
+
       <h2 class="text-xl font-semibold">Salud</h2>
     </div>
     <p class="mt-2">
@@ -501,6 +538,10 @@
     100% {
       transform: translateY(-100vh);
     }
+  }
+
+  .ionicon > * {
+    fill: white;
   }
 
   #animated_background {
