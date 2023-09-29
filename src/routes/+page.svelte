@@ -79,7 +79,7 @@
   let snackbarOpen = false;
 
   const showSnackbar = (status: Number) => {
-    if (status.toString().startsWith("20")) {
+    if (status == 201) {
       snackbarMsg = $_("snackbar-ok");
       onSuccess = true;
     } else {
