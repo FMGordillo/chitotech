@@ -134,6 +134,9 @@
         "cards-container"
       ); /* Voy a mover hacia los costados este contenedor */
 
+    setTimeout(() => {
+      moveToLeft()
+    }, 2000)
     leftBtn?.addEventListener("click", () => moveToLeft());
     rightBtn?.addEventListener("click", () => moveToRight());
   });
@@ -146,6 +149,9 @@
     cardsContainer.style.transform = `translateX(${
       -currentIndex * (100 / team.length)
     }%)`;
+    setTimeout(() => {
+      moveToLeft()
+    }, 2000)
   };
   const moveToRight = () => {
     currentIndex++;
@@ -452,9 +458,9 @@
     class="flex h-screen items-center justify-center bg-[url('/background_with_opacity.svg')]"
   >
     <div
-      class="bg-card text-card-foreground form-wrapper rounded-lg border shadow-sm"
+      class="bg-card text-card-foreground form-wrapper rounded-lg border shadow-sm bg-stone-950"
     >
-      <div class="p-6">
+      <div class="p-6 ">
         <div class="space-y-8">
           <div class="space-y-2">
             <h2 class="text-3xl font-semibold">{$_("form-title")}</h2>
