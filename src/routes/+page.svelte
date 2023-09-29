@@ -12,7 +12,7 @@
   const VITE_URL_BACKEND =
     import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
-console.log(VITE_URL_BACKEND)
+  
   let isIntersectingHeader = true;
 
   locale.set(defaultLocale);
