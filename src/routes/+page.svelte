@@ -427,11 +427,11 @@
   </div>
 </section>
 
-<h1
-  class="cool-title flex h-56 items-center justify-center text-center text-4xl font-bold"
->
-  {$_("about_team")}
-</h1>
+  <h1
+    class="cool-title flex h-40 items-center justify-center text-center text-4xl font-bold p-0 m-0"
+  >
+    {$_("about_team")}
+  </h1>
 
 <section class="flex flex-col items-center">
   <div class="carousel">
@@ -616,15 +616,16 @@
   }
 
   .carousel {
-    width: 500px;
-    height: 600px;
-    background-color: #241f31;
+    width: 400px;
+    height: 500px;
+    background-color: #0000007e;
     border-radius: 32px;
     box-shadow:
-      -42px 42px 71px #120f18,
-      42px -42px 71px #362f4a;
+      -12px 12px 21px #120f18,
+      12px -12px 21px #00838f6b;
     overflow: hidden;
     position: relative;
+    border: 2px solid #00838f;
   }
 
   .carousel .cards-container {
@@ -645,7 +646,7 @@
     width: calc(100% / 3);
   }
   .card__image {
-    width: 80%;
+    width: 70%;
     padding-top: 1rem;
     object-fit: cover;
   }
@@ -692,10 +693,8 @@
   }
   .cool-title {
     text-shadow:
-      0px 0px 5px #b393d3,
-      0px 0px 10px #b393d3,
-      0px 0px 10px #b393d3,
-      0px 0px 20px #b393d3;
+      0px 0px 5px #350402,
+      0px 0px 10px #350402;
     font-size: 50px;
   }
 
