@@ -161,6 +161,28 @@
 
 <head>
   <title>Chiro Tech - Software Consultancy</title>
+  <meta
+    name="description"
+    content="Top-notch Software Consultancy in Health, Finance and Legal"
+  />
+
+  <meta property="og:title" content="Chiro Tech - Software Consultancy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chirotech.dev" />
+  <meta
+    property="og:image"
+    content="https://chirotech.dev/twitter_thumbnail.png"
+  />
+  <meta
+    property="og:description"
+    content="Top-notch Software Consultancy in Health, Finance and Legal"
+  />
+
+  <meta name="twitter:card" value="summary" />
+  <meta
+    name="twitter:image"
+    value="https://chirotech.dev/twitter_large_image.png"
+  />
 </head>
 
 <header
