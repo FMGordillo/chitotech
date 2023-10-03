@@ -11,8 +11,10 @@
 
   const VITE_URL_BACKEND =
     import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
+  const VITE_CHIRO_BACKEND =
+    import.meta.env.VITE_CHIRO_BACKEND || "http://localhost:3001";
   const CALENDLY_URL = "https://calendly.com/chirotech/30min";
-  
+
   let isIntersectingHeader = true;
 
   locale.set(defaultLocale);
@@ -112,6 +114,23 @@
         },
         body: JSON.stringify({ name, organization, email, msg }),
       });
+
+      // We don't want to wait it out
+      fetch(
+        `${VITE_CHIRO_BACKEND}/hubspot/form/bfc5deca-26b9-4f4d-a641-8e2fb109f5c5`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            company: organization,
+            email,
+            firstname: name,
+          }),
+        }
+      );
+
       showSnackbar(response.status);
     } catch (e) {
       console.log("Error on Submit: ", e);
@@ -135,8 +154,8 @@
       ); /* Voy a mover hacia los costados este contenedor */
 
     setTimeout(() => {
-      moveToLeft()
-    }, 2000)
+      moveToLeft();
+    }, 2000);
     leftBtn?.addEventListener("click", () => moveToLeft());
     rightBtn?.addEventListener("click", () => moveToRight());
   });
@@ -150,8 +169,8 @@
       -currentIndex * (100 / team.length)
     }%)`;
     setTimeout(() => {
-      moveToLeft()
-    }, 2000)
+      moveToLeft();
+    }, 2000);
   };
   const moveToRight = () => {
     currentIndex++;
@@ -480,7 +499,6 @@
                   class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm text-black file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   id="name"
                   name="name"
-                  required
                   type="text"
                   placeholder={$_("form-placeholder-name")}
                 />
@@ -495,7 +513,6 @@
                   id="organization"
                   name="organization"
                   type="text"
-                  required
                   bind:value={organization}
                   placeholder={$_("form-placeholder-organization")}
                 />
@@ -525,7 +542,6 @@
                 class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[100px] w-full rounded-md border px-3 py-2 text-sm text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 id="msg"
                 name="msg"
-                required
                 bind:value={msg}
                 placeholder={$_("form-placeholder-msg")}
               ></textarea>
