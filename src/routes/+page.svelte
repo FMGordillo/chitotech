@@ -23,19 +23,19 @@
     {
       name: "Santiago Feijoó",
       role: "Chief Tech Officer",
-      image: "team_santiago.jpeg",
+      image: "team_santiago.webp",
       url: "https://www.linkedin.com/in/santiago-iv%C3%A1n-feijoo-b6b72b1a4/",
     },
     {
       name: "Matias Gonzalez",
       role: "Chief Sales Officer",
-      image: "team_matias.jpeg",
+      image: "team_matias.webp",
       url: "https://www.linkedin.com/in/mat%C3%ADas-gonz%C3%A1lez-6a8228155/",
     },
     {
       name: "Facundo Gordillo",
       role: "CEO & Founder",
-      image: "team_facundo.jpeg",
+      image: "team_facundo.webp",
       url: "https://www.linkedin.com/in/fmgordillo/",
     },
   ];
@@ -216,6 +216,7 @@
   <Logo />
   <div class="flex items-center gap-2">
     <select
+      aria-label={$_("language_label")}
       class="button-secondary-transition h-10 rounded border
       border-gray-300 bg-zinc-950 px-2 hover:bg-cyan-800"
       bind:value={$locale}
@@ -483,7 +484,7 @@
         <div class="space-y-8">
           <div class="space-y-2">
             <h2 class="text-3xl font-semibold">{$_("form-title")}</h2>
-            <p class="text-zinc-500 dark:text-zinc-400">
+            <p class="text-zinc-300">
               {$_("form-subtitle")}
             </p>
           </div>
