@@ -1,21 +1,11 @@
 <script>
-import { _ } from 'svelte-i18n'
+  import { _ } from "svelte-i18n";
   import Logo from "./Logo.svelte";
+
+  const year = new Date().getFullYear();
 </script>
 
-<!-- <p class="company-title"><strong>Company</strong></p>
-<div class="flex flex-row items-center jusitfy-start">
-  <div class="w-2/4">
-    <Logo/>
-  </div>
-  <p class="w-2/4"><strong class="footer-org-name">ChiroTech</strong> @2023</p>
-</div>
-<p class="locations-title"><strong>Locations</strong></p>
-<div class="">
-  
-</div> -->
-
-<footer class="footer">
+<footer class="footer mb-16">
   <div class="column">
     <div class="row mb-2">
       <div class="title-container">
@@ -23,7 +13,25 @@ import { _ } from 'svelte-i18n'
       </div>
     </div>
     <div class="row">
-      <p>ChiroTech @2023</p>
+      <p>ChiroTech @ {year}</p>
+    </div>
+    <div class="row flex gap-4">
+      <a
+        href="mailto:facundo@chirotech.dev"
+        target="_blank"
+        rel="noreferrer
+        noopener"
+      >
+        <img alt="Email" class="h-8 w-8" src="/mail_icon.svg" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/chirotech-dev"
+        target="_blank"
+        rel="noreferrer
+        noopener"
+      >
+        <img alt="Linkedin" class="h-8 w-8" src="/linkedin_icon.svg" />
+      </a>
     </div>
   </div>
   <div class="column">
@@ -40,15 +48,15 @@ import { _ } from 'svelte-i18n'
     </div>
   </div>
 </footer>
-<style>
 
+<style>
   .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 100px
+    height: 100px;
   }
-  .row{
+  .row {
     margin-top: 1rem;
   }
   .column {
@@ -58,17 +66,16 @@ import { _ } from 'svelte-i18n'
     border-bottom: 2px solid #08fcfe;
     width: fit-content;
   }
-  .row ul li{
+  .row ul li {
     margin-top: 15px;
   }
-  @media (width < 600px){
-    .footer{
+  @media (width < 600px) {
+    .footer {
       flex-direction: column;
       height: fit-content;
     }
-    .column:not(:last-child){
+    .column:not(:last-child) {
       margin-bottom: 20px;
     }
-
   }
 </style>
