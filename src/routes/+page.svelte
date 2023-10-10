@@ -13,7 +13,7 @@
     import.meta.env.VITE_URL_BACKEND || "http://localhost:8080/api/";
   const VITE_CHIRO_BACKEND =
     import.meta.env.VITE_CHIRO_BACKEND || "http://localhost:3001";
-  const CALENDLY_URL = "https://calendly.com/chirotech/30min";
+  const HUBSPOT_MEET_URL = "https://meetings-eu1.hubspot.com/facundo-gordillo";
 
   let isIntersectingHeader = true;
 
@@ -226,7 +226,7 @@
       {/each}
     </select>
     <a
-      href={CALENDLY_URL}
+      href={HUBSPOT_MEET_URL}
       target="_blank"
       rel="noreferrer noopener"
       class="text-l button-transition button-secondary-transition ml-4 rounded-full border border-gray-300 px-4 py-2"
@@ -263,7 +263,7 @@
     </div>
 
     <div class="flex flex-col items-center gap-4">
-      <Button href={CALENDLY_URL} target="_blank" rel="noreferrer noopener"
+      <Button href={HUBSPOT_MEET_URL} target="_blank" rel="noreferrer noopener"
         >{$_("lets_talk")}</Button
       >
       <Button href="#about_us" onClick={handleAboutUsScroll}
