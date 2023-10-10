@@ -373,11 +373,12 @@
           /></svg
         >
       </div>
-      <h2 class="text-xl font-semibold">Finanzas</h2>
+      <h2 class="text-xl font-semibold">
+        {$_("industry_sections.finance-title")}
+      </h2>
     </div>
     <p class="mt-2">
-      Nuestra experiencia en tecnologías como JavaScript y TypeScript nos
-      permite ofrecer soluciones innovadoras para la industria financiera.
+      {$_("industry_sections.finance-description")}
     </p>
     <Button
       href="https://calendly.com/d/4gj-3mf-5v8/30-minutes-meeting-finance"
@@ -402,11 +403,10 @@
           /></svg
         >
       </div>
-      <h2 class="text-xl font-semibold">Legales</h2>
+      <h2 class="text-xl font-semibold">{$_("industry_sections.legal-title")}</h2>
     </div>
     <p class="mt-2">
-      Trabajamos en colaboración con profesionales legales para desarrollar
-      aplicaciones que simplifiquen procesos y optimicen la gestión de casos.
+      {$_("industry_sections.legal-description")}
     </p>
     <Button
       href="https://calendly.com/d/4dn-sk6-shj/30-minutes-meeting-legal"
@@ -432,12 +432,10 @@
         >
       </div>
 
-      <h2 class="text-xl font-semibold">Salud</h2>
+      <h2 class="text-xl font-semibold">{$_("industry_sections.health-title")}</h2>
     </div>
     <p class="mt-2">
-      Exploramos tecnologías como Web3 para mejorar la atención médica y el
-      seguimiento de la salud de los pacientes en colaboración con profesionales
-      de la salud.
+      {$_("industry_sections.health-description")}
     </p>
     <Button
       href="https://calendly.com/d/4vc-9wn-nyr/30-minutes-meeting-health"

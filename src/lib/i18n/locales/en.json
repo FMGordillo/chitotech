@@ -9,6 +9,14 @@
   "what_we_do": "What we do",
   "our_industries": "We focus on",
   "contact_us": "Contact us",
+  "industry_sections": {
+    "finance-description": "Our experience in technologies like JavaScript and TypeScript allows us to offer innovative solutions for the financial industry.",
+    "finance-title": "Finance",
+    "health-description": "We explore technologies like Web3 to enhance healthcare and patient health tracking in collaboration with healthcare professionals.",
+    "health-title": "Health",
+    "legal-description": "We work in collaboration with legal professionals to develop applications that simplify processes and optimize case management.",
+    "legal-title": "Legals"
+  },
   "sections": {
     "blockchain-title": "Innovation in Blockchain",
     "blockchain-text": "We are experts in Blockchain application development, crafting innovative and secure solutions that drive the technological revolution.",
