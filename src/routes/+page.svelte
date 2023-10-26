@@ -128,7 +128,7 @@
             email,
             firstname: name,
           }),
-        }
+        },
       );
 
       showSnackbar(response.status);
@@ -150,7 +150,7 @@
     rightBtn = document.getElementById("carousel__btn-right");
     cardsContainer =
       document.getElementById(
-        "cards-container"
+        "cards-container",
       ); /* Voy a mover hacia los costados este contenedor */
 
     setTimeout(() => {
@@ -246,6 +246,8 @@
   <div
     class="absolute inset-0 z-0 bg-[url('/background_title.svg')] bg-right-bottom bg-repeat-x"
   />
+
+  <div class="absolute inset-0 z-0 bg-black/10" />
 
   <div
     class="z-10 mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 pt-48 md:grid-cols-2 md:pt-80"
@@ -403,7 +405,9 @@
           /></svg
         >
       </div>
-      <h2 class="text-xl font-semibold">{$_("industry_sections.legal-title")}</h2>
+      <h2 class="text-xl font-semibold">
+        {$_("industry_sections.legal-title")}
+      </h2>
     </div>
     <p class="mt-2">
       {$_("industry_sections.legal-description")}
@@ -432,7 +436,9 @@
         >
       </div>
 
-      <h2 class="text-xl font-semibold">{$_("industry_sections.health-title")}</h2>
+      <h2 class="text-xl font-semibold">
+        {$_("industry_sections.health-title")}
+      </h2>
     </div>
     <p class="mt-2">
       {$_("industry_sections.health-description")}
@@ -445,11 +451,11 @@
   </div>
 </section>
 
-  <h1
-    class="cool-title flex h-40 items-center justify-center text-center text-4xl font-bold p-0 m-0"
-  >
-    {$_("about_team")}
-  </h1>
+<h1
+  class="cool-title m-0 flex h-40 items-center justify-center p-0 text-center text-4xl font-bold"
+>
+  {$_("about_team")}
+</h1>
 
 <section class="flex flex-col items-center">
   <div class="carousel">
@@ -473,12 +479,12 @@
 
 <form method="POST" on:submit|preventDefault={handleSubmit}>
   <div
-    class="flex h-screen items-center justify-center bg-[url('/background_with_opacity.svg')] mt-40"
+    class="mt-40 flex h-screen items-center justify-center bg-[url('/background_with_opacity.svg')]"
   >
     <div
-      class="bg-card text-card-foreground form-wrapper rounded-lg border shadow-sm bg-stone-950"
+      class="bg-card text-card-foreground form-wrapper rounded-lg border bg-stone-950 shadow-sm"
     >
-      <div class="p-6 ">
+      <div class="p-6">
         <div class="space-y-8">
           <div class="space-y-2">
             <h2 class="text-3xl font-semibold">{$_("form-title")}</h2>
