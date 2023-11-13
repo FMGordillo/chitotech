@@ -210,28 +210,37 @@
   />
 </head>
 
-<header
-  class="fixed inset-x-0 top-0 z-10 mx-auto flex justify-between bg-zinc-950 p-4 transition"
->
-  <Logo />
-  <div class="flex items-center gap-2">
-    <select
-      aria-label={$_("language_label")}
-      class="button-secondary-transition h-10 rounded border
-      border-gray-300 bg-zinc-950 px-2 hover:bg-cyan-800"
-      bind:value={$locale}
-    >
-      {#each locales as l}
-        <option value={l}>{l}</option>
-      {/each}
-    </select>
-    <a
-      href={HUBSPOT_MEET_URL}
-      target="_blank"
-      rel="noreferrer noopener"
-      class="text-l button-transition button-secondary-transition ml-4 rounded-full border border-gray-300 px-4 py-2"
-      >{$_("lets_talk")} <span aria-hidden="true">🗓️</span></a
-    >
+<header class="fixed inset-x-0 top-0 z-10 bg-zinc-900 p-2 transition">
+  <div class="container mx-auto flex gap-2">
+    <div class="containter flex items-center gap-5">
+      <a class="flex items-center gap-2" href="tel:+34692698119">
+        <img class="h-4 w-4" src="/call.svg" />
+        692 698 119</a
+      >
+      <a
+        href="mailto:facundo@chirotech.dev"
+        target="_blank"
+        rel="noreferrer
+          noopener"
+      >
+        <img alt="Email" class="h-4 w-4" src="/mail_icon.svg" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/chirotech-dev"
+        target="_blank"
+        rel="noreferrer
+          noopener"
+      >
+        <img alt="Linkedin" class="h-4 w-4" src="/linkedin_icon.svg" />
+      </a>
+      <a
+        href={HUBSPOT_MEET_URL}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="text-l rounded-full"
+        ><span aria-hidden="true">🗓️</span> {$_("lets_talk")}
+      </a>
+    </div>
   </div>
 </header>
 
