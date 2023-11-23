@@ -39,5 +39,10 @@
   "snackbar-failed": "Whops! Something went wrong",
   "rights": "All rights reserved",
   "spain-street": "Spain: Moreto 34 St., Mataró, Barcelona",
-  "arg-street": "Argentina: Carlos Pellegrini 1149 Buenos Aires"
+  "arg-street": "Argentina: Carlos Pellegrini 1149 Buenos Aires",
+  "about-us": {
+    "mission-title": "Our mission",
+  "mission": "Developing excellent products while always keeping the human touch",
+    "timeline-1-title": "asdf"
+}
 }

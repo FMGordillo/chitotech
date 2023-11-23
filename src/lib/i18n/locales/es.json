@@ -39,5 +39,10 @@
   "snackbar-failed": "Error al enviar mensaje",
   "rights": "Todos los derechos reservados",
   "spain-street": "España: Calle Moreto 34, Mataró, Barcelona",
-  "arg-street": "Argentina: Carlos Pellegrini 1149, Buenos Aires"
+  "arg-street": "Argentina: Carlos Pellegrini 1149, Buenos Aires",
+  "about-us": {
+    "mission-title": "Nuestra misión",
+  "mission": "Desarrollar productos excelentes manteniendo siempre la esencia humana",
+    "timeline-1-title": "iasdfg"
+}
 }
