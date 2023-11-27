@@ -170,7 +170,7 @@
     }%)`;
     setTimeout(() => {
       moveToLeft();
-    }, 2000);
+    }, 5000);
   };
   const moveToRight = () => {
     currentIndex++;
@@ -366,9 +366,11 @@
   {$_("our_industries")}
 </h1>
 
-<section class="container mx-auto grid grid-cols-1 gap-8 pb-8 md:grid-cols-3">
+<section
+  class="container mx-auto grid grid-cols-1 justify-items-center gap-8 pb-8 md:grid-cols-3"
+>
   <!-- Sección de Finanzas -->
-  <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
+  <div class="flex max-w-sm flex-col gap-4 rounded-lg border p-4 shadow-lg">
     <div class="text-center">
       <div class="mx-auto mb-4 h-16 w-16">
         <svg
@@ -399,7 +401,7 @@
   </div>
 
   <!-- Sección de Legales -->
-  <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
+  <div class="flex max-w-sm flex-col gap-4 rounded-lg border p-4 shadow-lg">
     <div class="text-center">
       <div class="mx-auto mb-4 h-16 w-16">
         <svg
@@ -429,7 +431,7 @@
   </div>
 
   <!-- Sección de Salud -->
-  <div class="flex flex-col gap-4 rounded-lg p-4 shadow-lg">
+  <div class="flex max-w-sm flex-col gap-4 rounded-lg border p-4 shadow-lg">
     <div class="text-center">
       <div class="mx-auto mb-4 h-16 w-16">
         <svg
@@ -457,6 +459,40 @@
       target="blank"
       rel="noreferrer noopener">{$_("lets_talk")}</Button
     >
+  </div>
+</section>
+
+<h1
+  class="cool-title m-0 flex h-40 items-center justify-center p-0 text-center text-4xl font-bold"
+>
+  {$_("projects.title")}
+</h1>
+
+<section class="container mx-auto flex flex-col items-center">
+  <div class="grid grid-cols-1 border lg:grid-cols-[720px_1fr]">
+    <img src="/portfolio/secret_diary.png" alt="secret diary screenshot" />
+    <div class="flex max-w-prose flex-col gap-4">
+      <h2 class="text-4xl font-semibold">
+        {$_("projects.secret_diary.title")}
+      </h2>
+      <p class="leading-loose">
+        {$_("projects.secret_diary.description")}
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 border lg:grid-cols-[1fr_720px]">
+    <div class="flex max-w-prose flex-col gap-4">
+      <h2 class="text-4xl font-semibold">Amaranto</h2>
+      <p class="leading-loose">
+        {$_("projects.amaranto.description")}
+      </p>
+    </div>
+    <img
+      class="-order-1 lg:order-2"
+      src="/portfolio/amaranto.png"
+      alt="amaranto"
+    />
   </div>
 </section>
 

@@ -25,6 +25,16 @@
     "skills-title": "Shaping the Future",
     "skills-text": "With diverse expertise in JavaScript, TypeScript, and more, we lead innovation in Web3, HTMX, and Svelte to take your projects to the next level."
   },
+  "projects": {
+    "title": "Our projects",
+    "secret_diary": {
+      "title": "Tu diario secreto",
+      "description": "Tu diario secreto"
+    },
+    "amaranto": {
+      "description": "It's a digital platform for medical professionals responsible for managing consultations, enriched with tools that make its adoption easier, such as summarizing or digitizing medical records"
+    }
+  },
   "form-title": "Contact us",
   "form-subtitle": "Fill out the form below and we'll get back to you as soon as possible",
   "form-label-name": "Name",
