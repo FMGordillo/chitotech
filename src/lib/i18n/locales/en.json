@@ -42,7 +42,17 @@
   "arg-street": "Argentina: Carlos Pellegrini 1149 Buenos Aires",
   "about-us": {
     "mission-title": "Our mission",
-  "mission": "Developing excellent products while always keeping the human touch",
-    "timeline-1-title": "asdf"
-}
+    "timeline-title": "Our history",
+    "timeline-1-title": "ChiroTech was created",
+    "timeline-1-description": "We acknowledge the increasing demand for human collaboration in the digital age. In an environment where innovations in Artificial Intelligence are constantly evolving, this need becomes more critical than ever.",
+    "mission": "Developing excellent products while always keeping the human touch",
+    "timeline-2-title": "FavForMe was created",
+    "timeline-2-description": "We established a foundation aimed at supporting those who provide assistance by creating solidarity crowdfunding campaigns in collaboration with socially responsible companies.",
+    "timeline-2-button": "See site",
+    "timeline-3-title": "Graduated at Founder Institute Buenos Aires",
+    "timeline-3-description": "We joined the three-month accelerator program, connecting with the vibrant entrepreneurial ecosystem of Buenos Aires and establishing connections with potential partners.",
+    "footer-title": "We want to know your project, let's talk",
+    "footer-meeting": "Schedule a meeting",
+    "footer-mail": "Send us an email"
+  }
 }

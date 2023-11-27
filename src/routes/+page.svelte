@@ -247,7 +247,7 @@
       <Button href={HUBSPOT_MEET_URL} target="_blank" rel="noreferrer noopener"
         >{$_("lets_talk")}</Button
       >
-      <Button href="#about_us" onClick={handleAboutUsScroll}
+      <Button href="/about-us" 
         >{$_("about_us")}</Button
       >
     </div>

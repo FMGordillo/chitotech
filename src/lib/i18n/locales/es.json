@@ -41,8 +41,18 @@
   "spain-street": "España: Calle Moreto 34, Mataró, Barcelona",
   "arg-street": "Argentina: Carlos Pellegrini 1149, Buenos Aires",
   "about-us": {
+    "timeline-title": "Nuestra historia",
     "mission-title": "Nuestra misión",
-  "mission": "Desarrollar productos excelentes manteniendo siempre la esencia humana",
-    "timeline-1-title": "iasdfg"
-}
+    "mission": "Desarrollar productos excelentes manteniendo siempre la esencia humana",
+    "timeline-1-title": "Fundamos ChiroTech",
+    "timeline-1-description": "Reconocemos la creciente demanda de colaboración humana en la era digital. En un entorno donde las innovaciones en Inteligencia Artificial están en constante evolución, esta necesidad se vuelve más crítica que nunca.",
+    "timeline-2-title": "Fundamos FavForMe",
+    "timeline-2-description": "Establecimos una fundación orientada a apoyar a aquellos que brindan ayuda, mediante la creación de campañas solidarias de crowdfunding en colaboración con empresas comprometidas con la responsabilidad social.",
+    "timeline-2-button": "Ver sitio web",
+    "timeline-3-title": "Graduados de Founder Institute Buenos Aires",
+    "timeline-3-description": "Nos sumamos al programa de aceleración de tres meses, conectando con el vibrante ecosistema emprendedor de Buenos Aires y estableciendo vínculos con posibles socios.",
+    "footer-title": "Queremos conocer tu proyecto, podemos ayudarte",
+    "footer-meeting": "Coordinemos una reunión",
+    "footer-mail": "Envianos un correo"
+  }
 }
